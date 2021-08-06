@@ -12,7 +12,6 @@ class EducationController extends Controller
     public function index()
     {
         $userId = Helper::getUserIdFromSession();
-        
 
         $educations = EducationModel::load()->userEducations($userId);
 
