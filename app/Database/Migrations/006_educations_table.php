@@ -30,7 +30,27 @@ return [
 
     'seeder' => [
         'type' => 'array',
-        'data' => [],
-        'type' => 'array',
-    ],
+        'data' => array(
+            [
+                'user_id'       => 1,
+                'name'          => 'Tobys school' ,
+                'info'          => 'vind hij leuk',
+                'start_year'    => 2000,
+                'end_year'      => 2001,
+                'created'       => date('Y-m-d H:i:s'),
+                'created_by'    => 1
+            ],
+
+            [
+                'user_id'       => 1,
+                'name'          => 'iemands school' ,
+                'info'          => 'vind reawr hij leuk',
+                'start_year'    => 2001,
+                'end_year'      => 2001,
+                'created'       => date('Y-m-d H:i:s'),
+                'created_by'    => 1,
+            ]
+            
+        )
+    ]
 ];

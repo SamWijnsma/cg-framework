@@ -28,7 +28,7 @@ $router->get('user/{id}/edit', 'App/Controllers/UserController.php@edit', [
     'update' => Permissions::class
 ]);
 $router->post('user/{id}/update', 'App/Controllers/UserController.php@update', [
-    'update' => PermPissions::class
+    'update' => Permissions::class
 ]);
 $router->post('user/store', 'App/Controllers/UserController.php@store', [
     'create' => Permissions::class
@@ -46,6 +46,66 @@ $router->get('education', 'App/Controllers/EducationController.php@index', [
 $router->get('education/{id}/edit', 'App/Controllers/EducationController.php@edit', [
         'update' => Permissions::class
         ]);
+
+$router->post('education/{id}/update', 'App/Controllers/EducationController.php@update', [
+            'update' => Permissions::class
+        ]);
+
+$router->get('education/create', 'App/Controllers/EducationController.php@create', [
+            'create' => Permissions::class
+        ]);
+
+$router->post('education/store', 'App/Controllers/EducationController.php@store', [
+            'create' => Permissions::class
+        ]);
+$router->get('education/{id}/destroy', 'App/Controllers/EducationController.php@destroy', [
+            'delete' => Permissions::class
+        ]);
+
+// Jobs Routes
+$router->get('job', 'App/Controllers/JobController.php@index', [
+            'show' => Permissions::class
+                ]);
+$router->get('job/{id}/edit', 'App/Controllers/JobController.php@edit', [
+                'update' => Permissions::class
+                ]);
+        
+$router->post('job/{id}/update', 'App/Controllers/JobController.php@update', [
+                    'update' => Permissions::class
+                ]);
+$router->get('job/create', 'App/Controllers/JobController.php@create', [
+                    'create' => Permissions::class
+                ]);
+$router->post('job/store', 'App/Controllers/JobController.php@store', [
+                    'create' => Permissions::class
+                ]);
+
+$router->get('job/{id}/destroy', 'App/Controllers/JobController.php@destroy', [
+                    'delete' => Permissions::class
+                ]);
+// Skills Routes
+$router->get('skill', 'App/Controllers/SkillController.php@index', [
+    'show' => Permissions::class
+        ]);
+$router->get('skill/{id}/edit', 'App/Controllers/SkillController.php@edit', [
+        'update' => Permissions::class
+        ]);
+
+$router->post('skill/{id}/update', 'App/Controllers/SkillController.php@update', [
+            'update' => Permissions::class
+        ]);
+$router->get('skill/create', 'App/Controllers/SkillController.php@create', [
+            'create' => Permissions::class
+        ]);
+$router->post('skill/store', 'App/Controllers/SkillController.php@store', [
+            'create' => Permissions::class
+        ]);
+
+$router->get('skill/{id}/destroy', 'App/Controllers/SkillController.php@destroy', [
+            'delete' => Permissions::class
+        ]);
+
+
 
 // Overig
 $router->get('me', 'App/Controllers/ProfileController.php@index');
