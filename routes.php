@@ -108,7 +108,9 @@ $router->get('skill/{id}/destroy', 'App/Controllers/SkillController.php@destroy'
 
 
 // Overig
-$router->get('me', 'App/Controllers/ProfileController.php@index');
+$router->get('me', 'App/Controllers/OverviewController.php@index', [
+            'show'  => Permissions::class
+]);
 $router->get('', 'App/Controllers/HomeController.php@index');
 $router->get('home', 'App/Controllers/HomeController.php');
 $router->get('login', 'App/Controllers/LoginController.php@index');

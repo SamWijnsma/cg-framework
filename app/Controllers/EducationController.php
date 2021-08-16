@@ -57,11 +57,14 @@ public function update()
         $educationId = Helper::getIdFromUrl('education');
         
         $education = $_POST;
+        
 
         $education['updated_by'] = Helper::getUserIdFromSession();
         $education['updated'] = date('Y-m-d H:i:s');
 
         EducationModel::load()->update($education, $educationId);
+
+        header("Location: /me");
     }
 
 public function create()
@@ -91,11 +94,15 @@ public function store()
         $destroyId = Helper::getIdFromUrl('education');
         $userId = Helper::getUserIdFromSession();
         $education = EducationModel::load()->get($destroyId);
-        dd($destroyId);
-        dd($education);
+        
+        if($userId == $education -> user_id){
         
         EducationModel::load()->destroy($destroyId);
     }
-
+    else {
+        return View::render('errors/403.view', [
+            'message' => 'Ik maak toch ook niet jouw spul kapot'
+        ]);
+    }
+    }
 }
-

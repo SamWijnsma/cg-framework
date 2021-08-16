@@ -48,6 +48,9 @@ public function update()
         $skill['updated'] = date('Y-m-d H:i:s');
 
         SkillModel::load()->update($skill, $skillId);
+
+        header("Location: /me");
+        
     }
 
 public function create()

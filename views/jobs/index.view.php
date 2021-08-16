@@ -8,8 +8,8 @@
     <a></a>
 
     <div>
-    <a href="<?= $job->id ?>/destroy" class="btn btn-primary"> Delete </a>
-    <a href="<?= $job->id ?>/edit" class="btn btn-primary"> Edit </a>
+    <a href="/job/<?= $job->id ?>/destroy" location='/me' class="btn btn-primary"> Delete </a>
+    <a href="/job/<?= $job->id ?>/edit" class="btn btn-primary"> Edit </a>
     </div>
 <?php endforeach ?>
 

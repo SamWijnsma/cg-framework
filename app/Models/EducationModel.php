@@ -42,7 +42,7 @@ class EducationModel extends Model
 
     public function userEducations($userId)
     {
-        $sql = 'SELECT * FROM educations WHERE user_id=' . $userId;
+        $sql = 'SELECT * FROM educations WHERE deleted IS null AND user_id=' . $userId;
         $result = MySql::query($sql)->fetchAll(PDO::FETCH_CLASS);
 
         return $result;

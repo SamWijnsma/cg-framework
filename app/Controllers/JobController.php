@@ -6,7 +6,6 @@ use App\Helpers\Helper;
 use App\Libraries\View;
 use App\Models\JobModel;
 use App\Models\RoleModel;
-use App\Models\UserModel;
 
 class JobController extends Controller 
 {
@@ -47,22 +46,25 @@ public function edit()
             'message' => 'Blijf van mijn baan af'
         ]);
         
-        }
+    }
 
 }
 
 public function update()
-    {
+{
 
-        $jobId = Helper::getIdFromUrl('job');
+    $jobId = Helper::getIdFromUrl('job');
         
-        $job = $_POST;
+    $job = $_POST;
 
-        $job['updated_by'] = Helper::getUserIdFromSession();
-        $job['updated'] = date('Y-m-d H:i:s');
+    $job['updated_by'] = Helper::getUserIdFromSession();
+    $job['updated'] = date('Y-m-d H:i:s');
 
-        JobModel::load()->update($job, $jobId);
-    }
+    JobModel::load()->update($job, $jobId);
+    
+    header("Location: /me");
+
+}
 
 public function create()
     {   
@@ -101,7 +103,7 @@ public function destroy()
     else 
     {
         return View::render('errors/403.view', [
-                'message' => 'Ik maak toch ook niet jouw spul kapot'
+                'message' => 'Do not take ma job' 
     ]);        
     }
 }

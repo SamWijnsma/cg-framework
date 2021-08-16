@@ -36,7 +36,7 @@ class JobModel extends Model
 
     public function userJobs($userId)
     {
-        $sql = 'SELECT * FROM jobs WHERE user_id=' . $userId;
+        $sql = 'SELECT * FROM jobs WHERE deleted IS null AND user_id=' . $userId;
         $result = MySql::query($sql)->fetchAll(PDO::FETCH_CLASS);
 
         return $result;

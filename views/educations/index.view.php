@@ -8,8 +8,8 @@
     
 
 
-    <a href="<?= $education->id ?>/destroy" class="btn btn-primary"> Delete </a>
-    <a href="<?= $education->id ?>/edit" class="btn btn-primary"> Edit </a>
+    <a href="/education/<?= $education->id ?>/destroy" class="btn btn-primary"> Delete </a>
+    <a href="/education/<?= $education->id ?>/edit" class="btn btn-primary"> Edit </a>
     
     <a></a>
 <?php endforeach ?>
