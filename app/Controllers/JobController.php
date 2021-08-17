@@ -86,6 +86,8 @@ public function store()
         $addJob['user_id'] = Helper::getUserIdFromSession();
         
         jobModel::load()->store($addJob);
+
+        header("Location: /me");
     }
 
 public function destroy()

@@ -73,6 +73,8 @@ public function store()
         $addSkill['user_id'] = Helper::getUserIdFromSession();
         
         skillModel::load()->store($addSkill);
+
+        header("Location: /me");
     }
 
 public function destroy()

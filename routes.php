@@ -105,6 +105,29 @@ $router->get('skill/{id}/destroy', 'App/Controllers/SkillController.php@destroy'
             'delete' => Permissions::class
         ]);
 
+// Hobbies Routes
+
+$router->get('hobbie', 'App/Controllers/HobbieController.php@index', [
+    'show' => Permissions::class
+        ]);
+$router->get('hobbie/{id}/edit', 'App/Controllers/HobbieController.php@edit', [
+        'update' => Permissions::class
+        ]);
+
+$router->post('hobbie/{id}/update', 'App/Controllers/HobbieController.php@update', [
+            'update' => Permissions::class
+        ]);
+$router->get('hobbie/create', 'App/Controllers/HobbieController.php@create', [
+            'create' => Permissions::class
+        ]);
+$router->post('hobbie/store', 'App/Controllers/HobbieController.php@store', [
+            'create' => Permissions::class
+        ]);
+
+$router->get('hobbie/{id}/destroy', 'App/Controllers/HobbieController.php@destroy', [
+            'delete' => Permissions::class
+        ]);
+
 
 
 // Overig

@@ -87,6 +87,8 @@ public function store()
         $addeducation['user_id'] = Helper::getUserIdFromSession();
         
         EducationModel::load()->store($addeducation);
+
+        header("Location: /me");
     }
 
     public function destroy()
