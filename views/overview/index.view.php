@@ -11,7 +11,7 @@
     <a href="/education/<?= $education->id ?>/edit" class="btn btn-primary"> Edit </a>
     
     <a></a>
-<?php endforeach ?>
+<?php endforeach ?> 
 
 <h1> Werkervaring </h1>
 <?php foreach($vars['jobs'] as $job): ?>
