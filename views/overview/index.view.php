@@ -1,4 +1,34 @@
-    
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <a href="/education" class="btn btn-primary"> Alleen de Opleidingen</a>
+    </div>
+    <div class="col">
+    <a href="/job" class="btn btn-primary"> Alleen de Werkervaring</a>
+    </div>
+    <div class="col">
+    <a href="/skill" class="btn btn-primary"> Alleen de Vaardigheden</a>
+    </div>
+    <div class="col">
+    <a href="/hobbie" class="btn btn-primary"> Alleen de Hobbies</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    <a href="/education/create" class="btn btn-warning"> Of voeg een toe</a>
+    </div>
+    <div class="col">
+    <a href="/job/create" class="btn btn-warning"> Of voeg een toe</a>
+    </div>
+    <div class="col">
+    <a href="/skill/create" class="btn btn-warning"> Of voeg een toe</a>
+    </div>
+    <div class="col">
+    <a href="/hobbie/create" class="btn btn-warning"> Of voeg een toe</a>
+    </div>
+  </div>
+</div>
+
 <h1> Opleidingen </h1>
 
 <?php foreach($vars['educations'] as $education): ?>
