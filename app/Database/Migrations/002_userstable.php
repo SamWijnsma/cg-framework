@@ -1,10 +1,9 @@
 <?php
 
+
 return [
     'table_name' => 'users',
-
-    'drop_scheme' => "SET FOREIGN_KEY_CHECKS = 0; DROP TABLE IF EXISTS `users`; SET FOREIGN_KEY_CHECKS = 1",
-
+    'drop_scheme' => "SET FOREIGN_KEY_CHECKS = 0; DROP TABLE IF EXISTS `users`; SET FOREIGN_KEY_CHECKS = 1", 
     'scheme' => "CREATE TABLE IF NOT EXISTS `users` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
         `role`int(11) NOT NULL,
@@ -30,20 +29,20 @@ return [
         'ALTER TABLE `users` ADD FOREIGN KEY (`created_by`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;',
         'ALTER TABLE `users` ADD FOREIGN KEY (`updated_by`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;',
         'ALTER TABLE `users` ADD FOREIGN KEY (`deleted_by`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;',
-        'ALTER TABLE `users` ADD UNIQUE `email` (`email`);',
-    ],
-
-    'seeder' => [
-        'type' => 'array',
-        'data' => array([
-            'first_name' => 'Toby',
-            'last_name'  => 'Versteeg',
-            'email'      => 'toby@codegorilla.nl',
+        'ALTER TABLE `cvtwee`.`users` ADD UNIQUE `email` (`email`);',
+    ],      
+    'seeder'    => 
+        [   
+            'type' => 'array',
+            'data' => array([
+            'first_name' => 'Donald',
+            'last_name'  => 'Duck',
+            'email'      => 'donald@codegorilla.nl',
             'password'   => password_hash('Gorilla1!', PASSWORD_DEFAULT),
             'role'       => 1,
             'country'    => 156,
-            'city'       => 'Groningen',
-            'birthday'   => '1970-05-17',
+            'city'       => 'Duckstad',
+            'birthday'   => '1956-05-19',
             'created'    => date('Y-m-d H:i:s'),
             'created_by' => 1,
         ],
@@ -59,6 +58,21 @@ return [
             'birthday'   => '1996-03-19',
             'created'    => date('Y-m-d H:i:s'),
             'created_by' => 1,
-        ]),
+        ],
+
+        [
+            'first_name' => 'Micky',
+            'last_name'  => 'Mouse',
+            'email'      => 'ietsunieks@codegorilla.nl',
+            'password'   => password_hash('Gorilla1!', PASSWORD_DEFAULT),
+            'role'       => 3,
+            'country'    => 156,
+            'city'       => 'Groningen',
+            'birthday'   => '1996-03-19',
+            'created'    => date('Y-m-d H:i:s'),
+            'created_by' => 1,
+        ]
+
+        ),
     ],
-];
+]; 
